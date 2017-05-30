@@ -1,4 +1,4 @@
-/* ================================= 
+ ================================= 
   Base Element Styles
 ==================================== */
 
@@ -57,6 +57,7 @@ figcaption {
 figcaption h4 {
 	margin: 0;
 }
+
 
 
 /* ================================= 
@@ -126,84 +127,79 @@ figcaption h4 {
 	right: -15px;
 }
 
+.button {
+	color: #fff;
+	text-align: center;
+	padding: .625em 1.25em;
+	background: #3acec2;
+	border-radius: .35em;
+}
+
+.col_bg {
+	padding: 1em;
+	background: #edf4f7;
+	border-radius: .35em;
+	margin: 0 .5em .8em;
+}
+
 /* ================================= 
   Media Queries
 ==================================== */
-
 @media (min-width: 769px) {
-	
-	body {
-		margin-top: 59px; 
-	}
-	.name {
-		display: inline-block;
-		float: left;
-		padding-left: 2em;
-	}
-
-	.main-nav li {
-		display: inline-block;
-		float: right;
-	}
-
-	.main-header {
-		text-align: center;
-		position: fixed;
-		background: white;
-		width: 100%;
-		z-index: 1;
-		top: 0;
-		box-shadow: 0 1px 4px rgba(0,0,0,.4);
-	}
 
 	.container {
 		width: 80%;
 		margin: 0 auto;
 	}
-
-	.primary,
-	.secondary,
-	.tertiary {
-		max-width: 50%;
-		margin: 0;
-		padding: 10px;
-		padding-top: 30px;
-	}
-	.secondary {
-		float: left;
-	}
-	.primary {
-		float: right;
-	}
-	.tertiary {
-		max-width: 100%;
-		clear: both;
+	
+	.main-header {
+		flex-direction: row;
+		justify-content: space-between;
 	}
 
-	/* ---- Float clearfix ---- */
-
-	.clearfix::after {
-		content: " ";
-		display: table;
-		clear: both;
+	.main-header,
+	.row {
+		width: 80%;
+		margin: 0 auto;
 	}
-
-}
-
-@media (min-width: 1024px) {
-	.primary,
-	.secondary,
-	.tertiary {
-		max-width: 30%;
-		float: left;
-		display: block;
-		clear: none;
-	}
-	.primary {
-		max-width: 40%;
+	.tagline {
+		font-size: 1.4em;
 	}
 	
-	.main-footer {
-		clear: both;
+	.main-header {
+		/*flex-direction: column;*/
 	}
+	
+	.main-header,
+	.main-nav,
+	.row,
+	.col_bg {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.row {
+		justify-content: space-around;
+	}
+
+	.col {
+		flex: 1 300px;
+	}
+
+	.col_bg {
+		flex-direction: column;
+	}
+
+	.button {
+		margin-top: auto;
+		align-self: flex-start;
+	}
+}
+
+@media (min-width: 1025px) {
+
+	.col {
+		flex-basis: 0;
+	}
+	
 }
